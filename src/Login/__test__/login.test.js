@@ -1,5 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import Login from '../Login';
+import { fireEvent, render, screen } from '@testing-library/react';
+import {Login, MyCustomButton} from '../Login';
+
 
 describe("Login Component ", () =>{
     it('should show login form', () => {
@@ -19,4 +20,16 @@ describe("Login Component ", () =>{
     
     
     })
+
 })
+
+
+//my-Custom-btn --fire-events
+
+test('My custom btn calls onClick prop when clicked', () => {
+    const handleClick = jest.fn();
+    render(<MyCustomButton onClick={handleClick}>Click Me</MyCustomButton>)
+
+    fireEvent.click(screen.getByText(/click me/i))
+    expect(handleClick).toHaveBeenCalledTimes(1)
+  })

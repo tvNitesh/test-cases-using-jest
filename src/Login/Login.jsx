@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Login() {
+export function Login() {
   return (
     <div>
         <label for="username-input">Username</label>
@@ -12,8 +12,13 @@ function Login() {
             <h2>this is diffrent scenrios of test-cases</h2>
         </div>
 
+        <button onClick={()=>{console.log("btn clicked")}}>click me</button>
+
     </div>
   )
 }
 
-export default Login
+export const MyCustomButton = ({onClick, children}) => {
+    return(<button onClick={onClick}>{children}</button>
+    )
+}
