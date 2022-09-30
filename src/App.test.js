@@ -3,7 +3,7 @@ import App from './App';
 
 test('renders learn react link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/click the button/i);
   expect(linkElement).toBeInTheDocument();
 });
 it('test in progres',()=>{
